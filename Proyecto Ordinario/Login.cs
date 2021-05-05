@@ -15,8 +15,8 @@ namespace Proyecto_Ordinario
     {
         //Conexion a la base de datos
         SqlConnection conexion = new SqlConnection();
-        string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
-        //string cadena = "Data Source=shamiko;Initial Catalog=TiendaTec;Integrated Security=True";
+        //string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
+        string cadena = "Data Source=shamiko;Initial Catalog=TiendaTec;Integrated Security=True";
         //string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True"; 
         public Login()
         {

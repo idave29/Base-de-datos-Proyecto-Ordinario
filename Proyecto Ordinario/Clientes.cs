@@ -16,5 +16,10 @@ namespace Proyecto_Ordinario
         {
             InitializeComponent();
         }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
