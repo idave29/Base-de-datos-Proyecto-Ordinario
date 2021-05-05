@@ -382,6 +382,7 @@ namespace Proyecto_Ordinario
             this.btnQuery.Size = new System.Drawing.Size(26, 26);
             this.btnQuery.TabIndex = 80;
             this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // Empleados
             // 
