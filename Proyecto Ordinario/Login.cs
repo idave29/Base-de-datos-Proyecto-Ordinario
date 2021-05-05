@@ -27,7 +27,7 @@ namespace Proyecto_Ordinario
 
         private void Apagar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
             conexion.Close();
         }
 
@@ -39,7 +39,10 @@ namespace Proyecto_Ordinario
 
             if (dr.Read())
             {
-                MessageBox.Show("Login exitoso");
+                this.Hide();
+                //MessageBox.Show("Login exitoso");
+                Menu_Principal menu = new Menu_Principal();
+                menu.Show();
             }
             else
             {
