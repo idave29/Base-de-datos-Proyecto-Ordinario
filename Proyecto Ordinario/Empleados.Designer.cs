@@ -29,6 +29,7 @@ namespace Proyecto_Ordinario
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
@@ -58,7 +59,12 @@ namespace Proyecto_Ordinario
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnQuery = new FontAwesome.Sharp.IconButton();
+            this.tiendaTecDataSet2 = new Proyecto_Ordinario.TiendaTecDataSet2();
+            this.puestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.puestosTableAdapter = new Proyecto_Ordinario.TiendaTecDataSet2TableAdapters.PuestosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiendaTecDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.puestosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -83,6 +89,7 @@ namespace Proyecto_Ordinario
             this.BtnBuscar.Size = new System.Drawing.Size(26, 26);
             this.BtnBuscar.TabIndex = 43;
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // btnGuardar
             // 
@@ -98,6 +105,7 @@ namespace Proyecto_Ordinario
             this.btnGuardar.Size = new System.Drawing.Size(26, 26);
             this.btnGuardar.TabIndex = 42;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnModificar
             // 
@@ -113,6 +121,7 @@ namespace Proyecto_Ordinario
             this.btnModificar.Size = new System.Drawing.Size(26, 26);
             this.btnModificar.TabIndex = 41;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBorrar
             // 
@@ -128,6 +137,7 @@ namespace Proyecto_Ordinario
             this.btnBorrar.Size = new System.Drawing.Size(26, 26);
             this.btnBorrar.TabIndex = 40;
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnAgregar
             // 
@@ -143,6 +153,7 @@ namespace Proyecto_Ordinario
             this.btnAgregar.Size = new System.Drawing.Size(26, 26);
             this.btnAgregar.TabIndex = 39;
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnUltimo
             // 
@@ -158,6 +169,7 @@ namespace Proyecto_Ordinario
             this.btnUltimo.Size = new System.Drawing.Size(26, 26);
             this.btnUltimo.TabIndex = 38;
             this.btnUltimo.UseVisualStyleBackColor = true;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
             // 
             // btnPrimero
             // 
@@ -173,6 +185,7 @@ namespace Proyecto_Ordinario
             this.btnPrimero.Size = new System.Drawing.Size(26, 26);
             this.btnPrimero.TabIndex = 37;
             this.btnPrimero.UseVisualStyleBackColor = true;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
             // 
             // btnSiguiente
             // 
@@ -188,6 +201,7 @@ namespace Proyecto_Ordinario
             this.btnSiguiente.Size = new System.Drawing.Size(26, 26);
             this.btnSiguiente.TabIndex = 36;
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAnterior
             // 
@@ -203,6 +217,7 @@ namespace Proyecto_Ordinario
             this.btnAnterior.Size = new System.Drawing.Size(26, 26);
             this.btnAnterior.TabIndex = 35;
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // txtC
             // 
@@ -353,12 +368,15 @@ namespace Proyecto_Ordinario
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.puestosBindingSource;
+            this.comboBox1.DisplayMember = "Descripcion";
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(155, 287);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(187, 25);
             this.comboBox1.TabIndex = 53;
+            this.comboBox1.ValueMember = "Id_Puesto";
             // 
             // dateTimePicker1
             // 
@@ -367,6 +385,7 @@ namespace Proyecto_Ordinario
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(187, 23);
             this.dateTimePicker1.TabIndex = 55;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 5, 7, 19, 35, 33, 0);
             // 
             // btnQuery
             // 
@@ -383,6 +402,20 @@ namespace Proyecto_Ordinario
             this.btnQuery.TabIndex = 80;
             this.btnQuery.UseVisualStyleBackColor = true;
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
+            // 
+            // tiendaTecDataSet2
+            // 
+            this.tiendaTecDataSet2.DataSetName = "TiendaTecDataSet2";
+            this.tiendaTecDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // puestosBindingSource
+            // 
+            this.puestosBindingSource.DataMember = "Puestos";
+            this.puestosBindingSource.DataSource = this.tiendaTecDataSet2;
+            // 
+            // puestosTableAdapter
+            // 
+            this.puestosTableAdapter.ClearBeforeFill = true;
             // 
             // Empleados
             // 
@@ -421,7 +454,10 @@ namespace Proyecto_Ordinario
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Empleados";
             this.Text = "Empleados";
+            this.Load += new System.EventHandler(this.Empleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiendaTecDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.puestosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,5 +494,8 @@ namespace Proyecto_Ordinario
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private FontAwesome.Sharp.IconButton btnQuery;
+        private TiendaTecDataSet2 tiendaTecDataSet2;
+        private System.Windows.Forms.BindingSource puestosBindingSource;
+        private TiendaTecDataSet2TableAdapters.PuestosTableAdapter puestosTableAdapter;
     }
 }

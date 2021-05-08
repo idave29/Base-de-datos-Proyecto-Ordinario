@@ -29,6 +29,7 @@ namespace Proyecto_Ordinario
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbsueldo = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
@@ -40,8 +41,8 @@ namespace Proyecto_Ordinario
             this.btnPrimero = new FontAwesome.Sharp.IconButton();
             this.btnSiguiente = new FontAwesome.Sharp.IconButton();
             this.btnAnterior = new FontAwesome.Sharp.IconButton();
-            this.txtAM = new System.Windows.Forms.TextBox();
-            this.txtAP = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.txtN = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lbC = new System.Windows.Forms.Label();
@@ -49,10 +50,20 @@ namespace Proyecto_Ordinario
             this.lbAP = new System.Windows.Forms.Label();
             this.lbN = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.cmbCateg = new System.Windows.Forms.ComboBox();
             this.btnQuery = new FontAwesome.Sharp.IconButton();
+            this.tiendaTecDataSet = new Proyecto_Ordinario.TiendaTecDataSet();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marcasTableAdapter = new Proyecto_Ordinario.TiendaTecDataSetTableAdapters.MarcasTableAdapter();
+            this.tiendaTecDataSet1 = new Proyecto_Ordinario.TiendaTecDataSet1();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriasTableAdapter = new Proyecto_Ordinario.TiendaTecDataSet1TableAdapters.CategoriasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiendaTecDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiendaTecDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbsueldo
@@ -87,6 +98,7 @@ namespace Proyecto_Ordinario
             this.BtnBuscar.Size = new System.Drawing.Size(26, 26);
             this.BtnBuscar.TabIndex = 74;
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // btnGuardar
             // 
@@ -102,6 +114,7 @@ namespace Proyecto_Ordinario
             this.btnGuardar.Size = new System.Drawing.Size(26, 26);
             this.btnGuardar.TabIndex = 73;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnModificar
             // 
@@ -117,6 +130,7 @@ namespace Proyecto_Ordinario
             this.btnModificar.Size = new System.Drawing.Size(26, 26);
             this.btnModificar.TabIndex = 72;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBorrar
             // 
@@ -132,6 +146,7 @@ namespace Proyecto_Ordinario
             this.btnBorrar.Size = new System.Drawing.Size(26, 26);
             this.btnBorrar.TabIndex = 71;
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnAgregar
             // 
@@ -147,6 +162,7 @@ namespace Proyecto_Ordinario
             this.btnAgregar.Size = new System.Drawing.Size(26, 26);
             this.btnAgregar.TabIndex = 70;
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnUltimo
             // 
@@ -162,6 +178,7 @@ namespace Proyecto_Ordinario
             this.btnUltimo.Size = new System.Drawing.Size(26, 26);
             this.btnUltimo.TabIndex = 69;
             this.btnUltimo.UseVisualStyleBackColor = true;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
             // 
             // btnPrimero
             // 
@@ -177,6 +194,7 @@ namespace Proyecto_Ordinario
             this.btnPrimero.Size = new System.Drawing.Size(26, 26);
             this.btnPrimero.TabIndex = 68;
             this.btnPrimero.UseVisualStyleBackColor = true;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
             // 
             // btnSiguiente
             // 
@@ -192,6 +210,7 @@ namespace Proyecto_Ordinario
             this.btnSiguiente.Size = new System.Drawing.Size(26, 26);
             this.btnSiguiente.TabIndex = 67;
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAnterior
             // 
@@ -207,22 +226,23 @@ namespace Proyecto_Ordinario
             this.btnAnterior.Size = new System.Drawing.Size(26, 26);
             this.btnAnterior.TabIndex = 66;
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
-            // txtAM
+            // txtPrecio
             // 
-            this.txtAM.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAM.Location = new System.Drawing.Point(135, 210);
-            this.txtAM.Name = "txtAM";
-            this.txtAM.Size = new System.Drawing.Size(187, 23);
-            this.txtAM.TabIndex = 64;
+            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(135, 210);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(187, 23);
+            this.txtPrecio.TabIndex = 64;
             // 
-            // txtAP
+            // txtDesc
             // 
-            this.txtAP.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAP.Location = new System.Drawing.Point(135, 170);
-            this.txtAP.Name = "txtAP";
-            this.txtAP.Size = new System.Drawing.Size(187, 23);
-            this.txtAP.TabIndex = 63;
+            this.txtDesc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(135, 170);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(187, 23);
+            this.txtDesc.TabIndex = 63;
             // 
             // txtN
             // 
@@ -290,23 +310,28 @@ namespace Proyecto_Ordinario
             this.lbId.TabIndex = 56;
             this.lbId.Text = "ID:";
             // 
-            // comboBox1
+            // cmbMarca
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 251);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 25);
-            this.comboBox1.TabIndex = 77;
+            this.cmbMarca.DataSource = this.marcasBindingSource;
+            this.cmbMarca.DisplayMember = "Marca";
+            this.cmbMarca.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(135, 251);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(187, 25);
+            this.cmbMarca.TabIndex = 77;
+            this.cmbMarca.ValueMember = "Id_Marca";
             // 
-            // comboBox2
+            // cmbCateg
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(135, 293);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(187, 25);
-            this.comboBox2.TabIndex = 78;
+            this.cmbCateg.DataSource = this.categoriasBindingSource;
+            this.cmbCateg.DisplayMember = "Categoria";
+            this.cmbCateg.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCateg.FormattingEnabled = true;
+            this.cmbCateg.Location = new System.Drawing.Point(135, 293);
+            this.cmbCateg.Name = "cmbCateg";
+            this.cmbCateg.Size = new System.Drawing.Size(187, 25);
+            this.cmbCateg.TabIndex = 78;
             // 
             // btnQuery
             // 
@@ -324,14 +349,42 @@ namespace Proyecto_Ordinario
             this.btnQuery.UseVisualStyleBackColor = true;
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
+            // tiendaTecDataSet
+            // 
+            this.tiendaTecDataSet.DataSetName = "TiendaTecDataSet";
+            this.tiendaTecDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataMember = "Marcas";
+            this.marcasBindingSource.DataSource = this.tiendaTecDataSet;
+            // 
+            // marcasTableAdapter
+            // 
+            this.marcasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tiendaTecDataSet1
+            // 
+            this.tiendaTecDataSet1.DataSetName = "TiendaTecDataSet1";
+            this.tiendaTecDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataMember = "Categorias";
+            this.categoriasBindingSource.DataSource = this.tiendaTecDataSet1;
+            // 
+            // categoriasTableAdapter
+            // 
+            this.categoriasTableAdapter.ClearBeforeFill = true;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 400);
             this.Controls.Add(this.btnQuery);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbCateg);
+            this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.lbsueldo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnBuscar);
@@ -343,8 +396,8 @@ namespace Proyecto_Ordinario
             this.Controls.Add(this.btnPrimero);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
-            this.Controls.Add(this.txtAM);
-            this.Controls.Add(this.txtAP);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtN);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lbC);
@@ -355,7 +408,12 @@ namespace Proyecto_Ordinario
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Productos";
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.Productos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiendaTecDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiendaTecDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,8 +432,8 @@ namespace Proyecto_Ordinario
         private FontAwesome.Sharp.IconButton btnPrimero;
         private FontAwesome.Sharp.IconButton btnSiguiente;
         private FontAwesome.Sharp.IconButton btnAnterior;
-        private System.Windows.Forms.TextBox txtAM;
-        private System.Windows.Forms.TextBox txtAP;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.TextBox txtN;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lbC;
@@ -383,8 +441,14 @@ namespace Proyecto_Ordinario
         private System.Windows.Forms.Label lbAP;
         private System.Windows.Forms.Label lbN;
         private System.Windows.Forms.Label lbId;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.ComboBox cmbCateg;
         private FontAwesome.Sharp.IconButton btnQuery;
+        private TiendaTecDataSet tiendaTecDataSet;
+        private System.Windows.Forms.BindingSource marcasBindingSource;
+        private TiendaTecDataSetTableAdapters.MarcasTableAdapter marcasTableAdapter;
+        private TiendaTecDataSet1 tiendaTecDataSet1;
+        private System.Windows.Forms.BindingSource categoriasBindingSource;
+        private TiendaTecDataSet1TableAdapters.CategoriasTableAdapter categoriasTableAdapter;
     }
 }
