@@ -1,7 +1,7 @@
 ﻿
 namespace Proyecto_Ordinario
 {
-    partial class Menu_Principal
+    partial class Menu_Cajero
     {
         /// <summary>
         /// Required designer variable.
@@ -32,9 +32,6 @@ namespace Proyecto_Ordinario
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnProductos = new FontAwesome.Sharp.IconButton();
-            this.btnEmpleados = new FontAwesome.Sharp.IconButton();
-            this.btnClientes = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,9 +43,6 @@ namespace Proyecto_Ordinario
             this.formActual = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnSucursales = new FontAwesome.Sharp.IconButton();
-            this.btnMarcas = new FontAwesome.Sharp.IconButton();
-            this.btnCategorias = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogo)).BeginInit();
@@ -60,13 +54,7 @@ namespace Proyecto_Ordinario
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Firebrick;
-            this.panelMenu.Controls.Add(this.btnSucursales);
-            this.panelMenu.Controls.Add(this.btnMarcas);
-            this.panelMenu.Controls.Add(this.btnCategorias);
             this.panelMenu.Controls.Add(this.iconButton1);
-            this.panelMenu.Controls.Add(this.btnProductos);
-            this.panelMenu.Controls.Add(this.btnEmpleados);
-            this.panelMenu.Controls.Add(this.btnClientes);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -86,7 +74,7 @@ namespace Proyecto_Ordinario
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 295);
+            this.iconButton1.Location = new System.Drawing.Point(0, 172);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
@@ -96,72 +84,6 @@ namespace Proyecto_Ordinario
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductos.FlatAppearance.BorderSize = 0;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.IconChar = FontAwesome.Sharp.IconChar.Tv;
-            this.btnProductos.IconColor = System.Drawing.Color.Black;
-            this.btnProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(0, 254);
-            this.btnProductos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnProductos.Size = new System.Drawing.Size(267, 41);
-            this.btnProductos.TabIndex = 3;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProductos.UseVisualStyleBackColor = true;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.ForeColor = System.Drawing.Color.White;
-            this.btnEmpleados.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            this.btnEmpleados.IconColor = System.Drawing.Color.Black;
-            this.btnEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 213);
-            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnEmpleados.Size = new System.Drawing.Size(267, 41);
-            this.btnEmpleados.TabIndex = 2;
-            this.btnEmpleados.Text = "Empleados";
-            this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnClientes.IconColor = System.Drawing.Color.Black;
-            this.btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 172);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnClientes.Size = new System.Drawing.Size(267, 41);
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // panelLogo
             // 
@@ -303,73 +225,7 @@ namespace Proyecto_Ordinario
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnSucursales
-            // 
-            this.btnSucursales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSucursales.FlatAppearance.BorderSize = 0;
-            this.btnSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSucursales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSucursales.ForeColor = System.Drawing.Color.White;
-            this.btnSucursales.IconChar = FontAwesome.Sharp.IconChar.Building;
-            this.btnSucursales.IconColor = System.Drawing.Color.Black;
-            this.btnSucursales.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSucursales.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnSucursales.Location = new System.Drawing.Point(0, 449);
-            this.btnSucursales.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSucursales.Name = "btnSucursales";
-            this.btnSucursales.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnSucursales.Size = new System.Drawing.Size(267, 42);
-            this.btnSucursales.TabIndex = 10;
-            this.btnSucursales.Text = "Sucursales";
-            this.btnSucursales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSucursales.UseVisualStyleBackColor = true;
-            this.btnSucursales.Click += new System.EventHandler(this.btnSucursales_Click);
-            // 
-            // btnMarcas
-            // 
-            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMarcas.FlatAppearance.BorderSize = 0;
-            this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarcas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarcas.ForeColor = System.Drawing.Color.White;
-            this.btnMarcas.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.btnMarcas.IconColor = System.Drawing.Color.Black;
-            this.btnMarcas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMarcas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarcas.Location = new System.Drawing.Point(0, 398);
-            this.btnMarcas.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnMarcas.Size = new System.Drawing.Size(267, 51);
-            this.btnMarcas.TabIndex = 9;
-            this.btnMarcas.Text = "Marcas";
-            this.btnMarcas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMarcas.UseVisualStyleBackColor = true;
-            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
-            // 
-            // btnCategorias
-            // 
-            this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategorias.FlatAppearance.BorderSize = 0;
-            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategorias.ForeColor = System.Drawing.Color.White;
-            this.btnCategorias.IconChar = FontAwesome.Sharp.IconChar.Th;
-            this.btnCategorias.IconColor = System.Drawing.Color.Black;
-            this.btnCategorias.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 339);
-            this.btnCategorias.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnCategorias.Size = new System.Drawing.Size(267, 59);
-            this.btnCategorias.TabIndex = 8;
-            this.btnCategorias.Text = "Categorias Productos";
-            this.btnCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCategorias.UseVisualStyleBackColor = true;
-            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
-            // 
-            // Menu_Principal
+            // Menu_Cajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -378,7 +234,7 @@ namespace Proyecto_Ordinario
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Menu_Principal";
+            this.Name = "Menu_Cajero";
             this.Text = "Menu_Principal";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -395,10 +251,7 @@ namespace Proyecto_Ordinario
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton btnClientes;
         private System.Windows.Forms.Panel panelLogo;
-        private FontAwesome.Sharp.IconButton btnProductos;
-        private FontAwesome.Sharp.IconButton btnEmpleados;
         private System.Windows.Forms.PictureBox btnLogo;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconPictureBox iconoActual;
@@ -410,8 +263,5 @@ namespace Proyecto_Ordinario
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnSucursales;
-        private FontAwesome.Sharp.IconButton btnMarcas;
-        private FontAwesome.Sharp.IconButton btnCategorias;
     }
 }

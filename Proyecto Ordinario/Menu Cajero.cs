@@ -12,18 +12,18 @@ using System.Windows.Forms;
 
 namespace Proyecto_Ordinario
 {
-    public partial class Menu_Principal : Form
+    public partial class Menu_Cajero : Form
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        public Menu_Principal()
+        public Menu_Cajero()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 40);
             panelMenu.Controls.Add(leftBorderBtn);
-
+            //Form
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -41,6 +41,7 @@ namespace Proyecto_Ordinario
             if (senderBtn != null)
             {
                 DisableButton();
+
                 currentBtn = (IconButton)senderBtn;
                 currentBtn.BackColor = Color.FromArgb(255, 177, 74);
                 currentBtn.ForeColor = color;
@@ -127,25 +128,6 @@ namespace Proyecto_Ordinario
             BotonActivo(sender, RGBColors.color4);
             OpenChildForm(new Compra());
         }
-
-        private void btnCategorias_Click(object sender, EventArgs e)
-        {
-            BotonActivo(sender, RGBColors.color1);
-            OpenChildForm(new Categorias());
-        }
-
-        private void btnMarcas_Click(object sender, EventArgs e)
-        {
-            BotonActivo(sender, RGBColors.color2);
-            OpenChildForm(new Marcas());
-        }
-
-        private void btnSucursales_Click(object sender, EventArgs e)
-        {
-            BotonActivo(sender, RGBColors.color3);
-            OpenChildForm(new Sucursales());
-        }
-
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

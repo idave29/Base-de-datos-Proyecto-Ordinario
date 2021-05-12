@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_Ordinario
 {
-    public partial class Clientes : Form
+    public partial class Categorias : Form
     {
         //Conexion a la base de datos
         SqlConnection conexion = new SqlConnection();
@@ -20,7 +20,7 @@ namespace Proyecto_Ordinario
         string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True"; 
         int id = 0;
 
-        public Clientes()
+        public Categorias()
         {
             InitializeComponent();
             conexion.ConnectionString = cadena;
@@ -31,7 +31,7 @@ namespace Proyecto_Ordinario
         {
             conexion.Open();
             id++;
-            SqlCommand cmd = new SqlCommand("sp_NombresClientes ", conexion);
+            SqlCommand cmd = new SqlCommand("sp_Cat", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Id", id);
             DataTable dt = new DataTable();
@@ -45,7 +45,7 @@ namespace Proyecto_Ordinario
         {
             conexion.Open();
             id --;
-            SqlCommand cmd = new SqlCommand("sp_NombresClientes ", conexion);
+            SqlCommand cmd = new SqlCommand("sp_Cat", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Id", id);
             DataTable dt = new DataTable();
@@ -58,7 +58,7 @@ namespace Proyecto_Ordinario
         private void btnQuery_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM vw_Clientes", conexion);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM vw_Categorias", conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = cmd;
             DataTable tabla = new DataTable();
@@ -70,17 +70,17 @@ namespace Proyecto_Ordinario
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            if (txtId.Text != "" && txtN.Text != "" && txtAP.Text != "" && txtAM.Text != "" && txtC.Text != "")
+            if (txtId.Text != "" && txtCategoria.Text != "")
             {
                 int id = Convert.ToInt16(txtId.Text);
-                string cadena = "insert into Clientes values (" + id + ",'" + txtN.Text + "','" + txtAP.Text + "','" + txtAM.Text + "','" + txtC.Text + "')";
+                string cadena = "insert into Categorias values (" + id + ",'" + txtCategoria.Text +  "')";
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Los datos se guardaron correctamente");
                 Limpiar();
             }
             else
-                MessageBox.Show("Lllenar los campos");
+                MessageBox.Show("Llenar los campos");
             conexion.Close();
         }
 
@@ -89,16 +89,16 @@ namespace Proyecto_Ordinario
             conexion.Open();
             if (txtId.Text != "")
             {
-                SqlCommand comando = new SqlCommand("delete from Clientes where Id_Cliente=" + txtId.Text, conexion);
+                SqlCommand comando = new SqlCommand("delete from Categorias where Id_Categoria=" + txtId.Text, conexion);
                 int cant;
                 cant = comando.ExecuteNonQuery();
                 if (cant == 1)
                 {
-                    MessageBox.Show("Se borró el cliente");
+                    MessageBox.Show("Se borró Categoria");
                 }
                 else
                 {
-                    MessageBox.Show("No existe un cliente con el ID ingresado");
+                    MessageBox.Show("No existe una Categoria con el ID ingresado");
                 }
             }
             else
@@ -110,23 +110,23 @@ namespace Proyecto_Ordinario
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            if (txtId.Text != "" && txtN.Text != "" && txtAP.Text != "" && txtAM.Text != "" && txtC.Text != "")
+            if (txtId.Text != "" && txtCategoria.Text != "")
             {
                 int id = Convert.ToInt16(txtId.Text);
-                string cadena = "UPDATE Clientes set Id_Cliente='" + id + "',Nombre='" + txtN.Text + "',Ap_Pat='" + txtAP.Text + "',Ap_Mat='" + txtAM.Text + "',Correo='" + txtC.Text + "' WHERE Id_Cliente=" + txtId.Text;
+                string cadena = "UPDATE Categorias set Id_Categoria='" + id + "',Categoria='" + txtCategoria.Text + "' WHERE Id_Categoria=" + txtId.Text ;
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 int cant;
                 cant = comando.ExecuteNonQuery();
                 if (cant == 1)
                 {
-                    MessageBox.Show("Se modificaron los datos del cliente");
+                    MessageBox.Show("Se modificaron los datos de la Categoria");
                     Limpiar();
                 }
                 else
-                    MessageBox.Show("No existe un cliente con el ID ingresado");
+                    MessageBox.Show("No existe una Categoria con el ID ingresado");
             }
             else
-                MessageBox.Show("Lllenar los campos");
+                MessageBox.Show("Llenar los campos");
             conexion.Close();
         }
 
@@ -136,19 +136,16 @@ namespace Proyecto_Ordinario
             if (txtId.Text != "")
             {
                 string cod = txtId.Text;
-                string cadena = "select * from Clientes where Id_Cliente =" + cod;
+                string cadena = "select * from Categorias where Id_Categoria =" + cod;
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 SqlDataReader registro = comando.ExecuteReader();
                 if (registro.Read())
                 {
-                    txtId.Text = registro["Id_Cliente"].ToString();
-                    txtN.Text = registro["Nombre"].ToString();
-                    txtAP.Text = registro["Ap_Pat"].ToString();
-                    txtAM.Text = registro["Ap_Mat"].ToString();
-                    txtC.Text = registro["Correo"].ToString();
+                    txtId.Text = registro["Id_Categoria"].ToString();
+                    txtCategoria.Text = registro["Categoria"].ToString();
                 }
                 else
-                    MessageBox.Show("No existe un cliente con el id ingresado");
+                    MessageBox.Show("No existe una categoria con el id ingresado");
             }
             else
                 MessageBox.Show("No dejar vacio el ID");
@@ -160,7 +157,7 @@ namespace Proyecto_Ordinario
             conexion.Open();
             if (txtId.Text != "")
             {
-                SqlCommand cmd = new SqlCommand("sp_NombresClientes ", conexion);
+                SqlCommand cmd = new SqlCommand("sp_Cat", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 DataTable dt = new DataTable();
@@ -177,7 +174,7 @@ namespace Proyecto_Ordinario
         private void btnPrimero_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM PrimerReg()", conexion);
+            SqlCommand cmd = new SqlCommand("SELECT * From PrimerRegCat()", conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = cmd;
             DataTable tabla = new DataTable();
@@ -189,7 +186,7 @@ namespace Proyecto_Ordinario
         private void btnUltimo_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM Clientes ORDER BY Id_Cliente DESC", conexion);
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM Categorias ORDER BY Id_Categoria DESC", conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = cmd;
             DataTable tabla = new DataTable();
@@ -201,10 +198,7 @@ namespace Proyecto_Ordinario
         private void Limpiar()
         {
             txtId.Clear();
-            txtN.Clear();
-            txtAP.Clear();
-            txtAM.Clear();
-            txtC.Clear();
+            txtCategoria.Clear();
         }
 
        

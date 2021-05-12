@@ -24,7 +24,7 @@ namespace Proyecto_Ordinario {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class TiendaTecDataSet1 : global::System.Data.DataSet {
         
-        private CategoriasDataTable tableCategorias;
+        private SucursalesDataTable tableSucursales;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace Proyecto_Ordinario {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Categorias"] != null)) {
-                    base.Tables.Add(new CategoriasDataTable(ds.Tables["Categorias"]));
+                if ((ds.Tables["Sucursales"] != null)) {
+                    base.Tables.Add(new SucursalesDataTable(ds.Tables["Sucursales"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Proyecto_Ordinario {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CategoriasDataTable Categorias {
+        public SucursalesDataTable Sucursales {
             get {
-                return this.tableCategorias;
+                return this.tableSucursales;
             }
         }
         
@@ -152,8 +152,8 @@ namespace Proyecto_Ordinario {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Categorias"] != null)) {
-                    base.Tables.Add(new CategoriasDataTable(ds.Tables["Categorias"]));
+                if ((ds.Tables["Sucursales"] != null)) {
+                    base.Tables.Add(new SucursalesDataTable(ds.Tables["Sucursales"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Proyecto_Ordinario {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableCategorias = ((CategoriasDataTable)(base.Tables["Categorias"]));
+            this.tableSucursales = ((SucursalesDataTable)(base.Tables["Sucursales"]));
             if ((initTable == true)) {
-                if ((this.tableCategorias != null)) {
-                    this.tableCategorias.InitVars();
+                if ((this.tableSucursales != null)) {
+                    this.tableSucursales.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace Proyecto_Ordinario {
             this.Namespace = "http://tempuri.org/TiendaTecDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableCategorias = new CategoriasDataTable();
-            base.Tables.Add(this.tableCategorias);
+            this.tableSucursales = new SucursalesDataTable();
+            base.Tables.Add(this.tableSucursales);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeCategorias() {
+        private bool ShouldSerializeSucursales() {
             return false;
         }
         
@@ -270,23 +270,29 @@ namespace Proyecto_Ordinario {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void CategoriasRowChangeEventHandler(object sender, CategoriasRowChangeEvent e);
+        public delegate void SucursalesRowChangeEventHandler(object sender, SucursalesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CategoriasDataTable : global::System.Data.TypedTableBase<CategoriasRow> {
+        public partial class SucursalesDataTable : global::System.Data.TypedTableBase<SucursalesRow> {
             
-            private global::System.Data.DataColumn columnId_Categoria;
+            private global::System.Data.DataColumn columnId_Sucursal;
             
-            private global::System.Data.DataColumn columnCategoria;
+            private global::System.Data.DataColumn columnNombre_Sucursal;
+            
+            private global::System.Data.DataColumn columnCalle;
+            
+            private global::System.Data.DataColumn columnNumero;
+            
+            private global::System.Data.DataColumn columnColonia;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoriasDataTable() {
-                this.TableName = "Categorias";
+            public SucursalesDataTable() {
+                this.TableName = "Sucursales";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +300,7 @@ namespace Proyecto_Ordinario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CategoriasDataTable(global::System.Data.DataTable table) {
+            internal SucursalesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +317,48 @@ namespace Proyecto_Ordinario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected CategoriasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SucursalesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Id_CategoriaColumn {
+            public global::System.Data.DataColumn Id_SucursalColumn {
                 get {
-                    return this.columnId_Categoria;
+                    return this.columnId_Sucursal;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CategoriaColumn {
+            public global::System.Data.DataColumn Nombre_SucursalColumn {
                 get {
-                    return this.columnCategoria;
+                    return this.columnNombre_Sucursal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CalleColumn {
+                get {
+                    return this.columnCalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NumeroColumn {
+                get {
+                    return this.columnNumero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ColoniaColumn {
+                get {
+                    return this.columnColonia;
                 }
             }
             
@@ -343,53 +373,56 @@ namespace Proyecto_Ordinario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoriasRow this[int index] {
+            public SucursalesRow this[int index] {
                 get {
-                    return ((CategoriasRow)(this.Rows[index]));
+                    return ((SucursalesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CategoriasRowChangeEventHandler CategoriasRowChanging;
+            public event SucursalesRowChangeEventHandler SucursalesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CategoriasRowChangeEventHandler CategoriasRowChanged;
+            public event SucursalesRowChangeEventHandler SucursalesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CategoriasRowChangeEventHandler CategoriasRowDeleting;
+            public event SucursalesRowChangeEventHandler SucursalesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CategoriasRowChangeEventHandler CategoriasRowDeleted;
+            public event SucursalesRowChangeEventHandler SucursalesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddCategoriasRow(CategoriasRow row) {
+            public void AddSucursalesRow(SucursalesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoriasRow AddCategoriasRow(short Id_Categoria, string Categoria) {
-                CategoriasRow rowCategoriasRow = ((CategoriasRow)(this.NewRow()));
+            public SucursalesRow AddSucursalesRow(short Id_Sucursal, string Nombre_Sucursal, string Calle, short Numero, string Colonia) {
+                SucursalesRow rowSucursalesRow = ((SucursalesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id_Categoria,
-                        Categoria};
-                rowCategoriasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCategoriasRow);
-                return rowCategoriasRow;
+                        Id_Sucursal,
+                        Nombre_Sucursal,
+                        Calle,
+                        Numero,
+                        Colonia};
+                rowSucursalesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSucursalesRow);
+                return rowSucursalesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoriasRow FindById_Categoria(short Id_Categoria) {
-                return ((CategoriasRow)(this.Rows.Find(new object[] {
-                            Id_Categoria})));
+            public SucursalesRow FindById_Sucursal(short Id_Sucursal) {
+                return ((SucursalesRow)(this.Rows.Find(new object[] {
+                            Id_Sucursal})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                CategoriasDataTable cln = ((CategoriasDataTable)(base.Clone()));
+                SucursalesDataTable cln = ((SucursalesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,55 +430,69 @@ namespace Proyecto_Ordinario {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new CategoriasDataTable();
+                return new SucursalesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnId_Categoria = base.Columns["Id_Categoria"];
-                this.columnCategoria = base.Columns["Categoria"];
+                this.columnId_Sucursal = base.Columns["Id_Sucursal"];
+                this.columnNombre_Sucursal = base.Columns["Nombre_Sucursal"];
+                this.columnCalle = base.Columns["Calle"];
+                this.columnNumero = base.Columns["Numero"];
+                this.columnColonia = base.Columns["Colonia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnId_Categoria = new global::System.Data.DataColumn("Id_Categoria", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Categoria);
-                this.columnCategoria = new global::System.Data.DataColumn("Categoria", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCategoria);
+                this.columnId_Sucursal = new global::System.Data.DataColumn("Id_Sucursal", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_Sucursal);
+                this.columnNombre_Sucursal = new global::System.Data.DataColumn("Nombre_Sucursal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre_Sucursal);
+                this.columnCalle = new global::System.Data.DataColumn("Calle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCalle);
+                this.columnNumero = new global::System.Data.DataColumn("Numero", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumero);
+                this.columnColonia = new global::System.Data.DataColumn("Colonia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColonia);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId_Categoria}, true));
-                this.columnId_Categoria.AllowDBNull = false;
-                this.columnId_Categoria.Unique = true;
-                this.columnCategoria.AllowDBNull = false;
-                this.columnCategoria.MaxLength = 50;
+                                this.columnId_Sucursal}, true));
+                this.columnId_Sucursal.AllowDBNull = false;
+                this.columnId_Sucursal.Unique = true;
+                this.columnNombre_Sucursal.AllowDBNull = false;
+                this.columnNombre_Sucursal.MaxLength = 50;
+                this.columnCalle.AllowDBNull = false;
+                this.columnCalle.MaxLength = 50;
+                this.columnNumero.AllowDBNull = false;
+                this.columnColonia.AllowDBNull = false;
+                this.columnColonia.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoriasRow NewCategoriasRow() {
-                return ((CategoriasRow)(this.NewRow()));
+            public SucursalesRow NewSucursalesRow() {
+                return ((SucursalesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CategoriasRow(builder);
+                return new SucursalesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(CategoriasRow);
+                return typeof(SucursalesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.CategoriasRowChanged != null)) {
-                    this.CategoriasRowChanged(this, new CategoriasRowChangeEvent(((CategoriasRow)(e.Row)), e.Action));
+                if ((this.SucursalesRowChanged != null)) {
+                    this.SucursalesRowChanged(this, new SucursalesRowChangeEvent(((SucursalesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -453,8 +500,8 @@ namespace Proyecto_Ordinario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.CategoriasRowChanging != null)) {
-                    this.CategoriasRowChanging(this, new CategoriasRowChangeEvent(((CategoriasRow)(e.Row)), e.Action));
+                if ((this.SucursalesRowChanging != null)) {
+                    this.SucursalesRowChanging(this, new SucursalesRowChangeEvent(((SucursalesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -462,8 +509,8 @@ namespace Proyecto_Ordinario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.CategoriasRowDeleted != null)) {
-                    this.CategoriasRowDeleted(this, new CategoriasRowChangeEvent(((CategoriasRow)(e.Row)), e.Action));
+                if ((this.SucursalesRowDeleted != null)) {
+                    this.SucursalesRowDeleted(this, new SucursalesRowChangeEvent(((SucursalesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -471,14 +518,14 @@ namespace Proyecto_Ordinario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.CategoriasRowDeleting != null)) {
-                    this.CategoriasRowDeleting(this, new CategoriasRowChangeEvent(((CategoriasRow)(e.Row)), e.Action));
+                if ((this.SucursalesRowDeleting != null)) {
+                    this.SucursalesRowDeleting(this, new SucursalesRowChangeEvent(((SucursalesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveCategoriasRow(CategoriasRow row) {
+            public void RemoveSucursalesRow(SucursalesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -505,7 +552,7 @@ namespace Proyecto_Ordinario {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CategoriasDataTable";
+                attribute2.FixedValue = "SucursalesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -549,36 +596,69 @@ namespace Proyecto_Ordinario {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class CategoriasRow : global::System.Data.DataRow {
+        public partial class SucursalesRow : global::System.Data.DataRow {
             
-            private CategoriasDataTable tableCategorias;
+            private SucursalesDataTable tableSucursales;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CategoriasRow(global::System.Data.DataRowBuilder rb) : 
+            internal SucursalesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCategorias = ((CategoriasDataTable)(this.Table));
+                this.tableSucursales = ((SucursalesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short Id_Categoria {
+            public short Id_Sucursal {
                 get {
-                    return ((short)(this[this.tableCategorias.Id_CategoriaColumn]));
+                    return ((short)(this[this.tableSucursales.Id_SucursalColumn]));
                 }
                 set {
-                    this[this.tableCategorias.Id_CategoriaColumn] = value;
+                    this[this.tableSucursales.Id_SucursalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Categoria {
+            public string Nombre_Sucursal {
                 get {
-                    return ((string)(this[this.tableCategorias.CategoriaColumn]));
+                    return ((string)(this[this.tableSucursales.Nombre_SucursalColumn]));
                 }
                 set {
-                    this[this.tableCategorias.CategoriaColumn] = value;
+                    this[this.tableSucursales.Nombre_SucursalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Calle {
+                get {
+                    return ((string)(this[this.tableSucursales.CalleColumn]));
+                }
+                set {
+                    this[this.tableSucursales.CalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short Numero {
+                get {
+                    return ((short)(this[this.tableSucursales.NumeroColumn]));
+                }
+                set {
+                    this[this.tableSucursales.NumeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Colonia {
+                get {
+                    return ((string)(this[this.tableSucursales.ColoniaColumn]));
+                }
+                set {
+                    this[this.tableSucursales.ColoniaColumn] = value;
                 }
             }
         }
@@ -587,22 +667,22 @@ namespace Proyecto_Ordinario {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class CategoriasRowChangeEvent : global::System.EventArgs {
+        public class SucursalesRowChangeEvent : global::System.EventArgs {
             
-            private CategoriasRow eventRow;
+            private SucursalesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoriasRowChangeEvent(CategoriasRow row, global::System.Data.DataRowAction action) {
+            public SucursalesRowChangeEvent(SucursalesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoriasRow Row {
+            public SucursalesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -630,7 +710,7 @@ namespace Proyecto_Ordinario.TiendaTecDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CategoriasTableAdapter : global::System.ComponentModel.Component {
+    public partial class SucursalesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -644,7 +724,7 @@ namespace Proyecto_Ordinario.TiendaTecDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public CategoriasTableAdapter() {
+        public SucursalesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -741,41 +821,56 @@ namespace Proyecto_Ordinario.TiendaTecDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Categorias";
-            tableMapping.ColumnMappings.Add("Id_Categoria", "Id_Categoria");
-            tableMapping.ColumnMappings.Add("Categoria", "Categoria");
+            tableMapping.DataSetTable = "Sucursales";
+            tableMapping.ColumnMappings.Add("Id_Sucursal", "Id_Sucursal");
+            tableMapping.ColumnMappings.Add("Nombre_Sucursal", "Nombre_Sucursal");
+            tableMapping.ColumnMappings.Add("Calle", "Calle");
+            tableMapping.ColumnMappings.Add("Numero", "Numero");
+            tableMapping.ColumnMappings.Add("Colonia", "Colonia");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Categorias] WHERE (([Id_Categoria] = @Original_Id_Categoria) A" +
-                "ND ([Categoria] = @Original_Categoria))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Sucursales] WHERE (([Id_Sucursal] = @Original_Id_Sucursal) AND" +
+                " ([Nombre_Sucursal] = @Original_Nombre_Sucursal) AND ([Calle] = @Original_Calle)" +
+                " AND ([Numero] = @Original_Numero) AND ([Colonia] = @Original_Colonia))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Categoria", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Categoria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Categoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Sucursal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Sucursal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre_Sucursal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre_Sucursal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Calle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Calle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Numero", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Colonia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Colonia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Categorias] ([Id_Categoria], [Categoria]) VALUES (@Id_Categori" +
-                "a, @Categoria);\r\nSELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Catego" +
-                "ria = @Id_Categoria)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Sucursales] ([Id_Sucursal], [Nombre_Sucursal], [Calle], [Numero], [Colonia]) VALUES (@Id_Sucursal, @Nombre_Sucursal, @Calle, @Numero, @Colonia);
+SELECT Id_Sucursal, Nombre_Sucursal, Calle, Numero, Colonia FROM Sucursales WHERE (Id_Sucursal = @Id_Sucursal)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Categoria", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Categoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Sucursal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Sucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre_Sucursal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre_Sucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Calle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Calle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Colonia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Colonia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Categorias] SET [Id_Categoria] = @Id_Categoria, [Categoria] = @Categoria WHERE (([Id_Categoria] = @Original_Id_Categoria) AND ([Categoria] = @Original_Categoria));
-SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categoria)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Sucursales] SET [Id_Sucursal] = @Id_Sucursal, [Nombre_Sucursal] = @Nombre_Sucursal, [Calle] = @Calle, [Numero] = @Numero, [Colonia] = @Colonia WHERE (([Id_Sucursal] = @Original_Id_Sucursal) AND ([Nombre_Sucursal] = @Original_Nombre_Sucursal) AND ([Calle] = @Original_Calle) AND ([Numero] = @Original_Numero) AND ([Colonia] = @Original_Colonia));
+SELECT Id_Sucursal, Nombre_Sucursal, Calle, Numero, Colonia FROM Sucursales WHERE (Id_Sucursal = @Id_Sucursal)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Categoria", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Categoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Categoria", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Categoria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Categoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Sucursal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Sucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre_Sucursal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre_Sucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Calle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Calle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Colonia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Colonia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Sucursal", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Sucursal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre_Sucursal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre_Sucursal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Calle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Calle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Numero", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Colonia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Colonia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Proyecto_Ordinario.Properties.Settings.Default.TiendaTecConnectionString;
+            this._connection.ConnectionString = global::Proyecto_Ordinario.Properties.Settings.Default.TiendaTecConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -784,7 +879,7 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_Categoria, Categoria FROM dbo.Categorias";
+            this._commandCollection[0].CommandText = "SELECT Id_Sucursal, Nombre_Sucursal, Calle, Numero, Colonia FROM dbo.Sucursales";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -792,7 +887,7 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TiendaTecDataSet1.CategoriasDataTable dataTable) {
+        public virtual int Fill(TiendaTecDataSet1.SucursalesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -805,9 +900,9 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TiendaTecDataSet1.CategoriasDataTable GetData() {
+        public virtual TiendaTecDataSet1.SucursalesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TiendaTecDataSet1.CategoriasDataTable dataTable = new TiendaTecDataSet1.CategoriasDataTable();
+            TiendaTecDataSet1.SucursalesDataTable dataTable = new TiendaTecDataSet1.SucursalesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -815,7 +910,7 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TiendaTecDataSet1.CategoriasDataTable dataTable) {
+        public virtual int Update(TiendaTecDataSet1.SucursalesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -823,7 +918,7 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(TiendaTecDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Categorias");
+            return this.Adapter.Update(dataSet, "Sucursales");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -845,13 +940,26 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_Id_Categoria, string Original_Categoria) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_Id_Categoria));
-            if ((Original_Categoria == null)) {
-                throw new global::System.ArgumentNullException("Original_Categoria");
+        public virtual int Delete(short Original_Id_Sucursal, string Original_Nombre_Sucursal, string Original_Calle, short Original_Numero, string Original_Colonia) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_Id_Sucursal));
+            if ((Original_Nombre_Sucursal == null)) {
+                throw new global::System.ArgumentNullException("Original_Nombre_Sucursal");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Categoria));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nombre_Sucursal));
+            }
+            if ((Original_Calle == null)) {
+                throw new global::System.ArgumentNullException("Original_Calle");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Calle));
+            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((short)(Original_Numero));
+            if ((Original_Colonia == null)) {
+                throw new global::System.ArgumentNullException("Original_Colonia");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Colonia));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -873,13 +981,26 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short Id_Categoria, string Categoria) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(Id_Categoria));
-            if ((Categoria == null)) {
-                throw new global::System.ArgumentNullException("Categoria");
+        public virtual int Insert(short Id_Sucursal, string Nombre_Sucursal, string Calle, short Numero, string Colonia) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(Id_Sucursal));
+            if ((Nombre_Sucursal == null)) {
+                throw new global::System.ArgumentNullException("Nombre_Sucursal");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Categoria));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nombre_Sucursal));
+            }
+            if ((Calle == null)) {
+                throw new global::System.ArgumentNullException("Calle");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Calle));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(Numero));
+            if ((Colonia == null)) {
+                throw new global::System.ArgumentNullException("Colonia");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Colonia));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -901,20 +1022,46 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short Id_Categoria, string Categoria, short Original_Id_Categoria, string Original_Categoria) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(Id_Categoria));
-            if ((Categoria == null)) {
-                throw new global::System.ArgumentNullException("Categoria");
+        public virtual int Update(short Id_Sucursal, string Nombre_Sucursal, string Calle, short Numero, string Colonia, short Original_Id_Sucursal, string Original_Nombre_Sucursal, string Original_Calle, short Original_Numero, string Original_Colonia) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(Id_Sucursal));
+            if ((Nombre_Sucursal == null)) {
+                throw new global::System.ArgumentNullException("Nombre_Sucursal");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Categoria));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nombre_Sucursal));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(Original_Id_Categoria));
-            if ((Original_Categoria == null)) {
-                throw new global::System.ArgumentNullException("Original_Categoria");
+            if ((Calle == null)) {
+                throw new global::System.ArgumentNullException("Calle");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Categoria));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Calle));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Numero));
+            if ((Colonia == null)) {
+                throw new global::System.ArgumentNullException("Colonia");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Colonia));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Original_Id_Sucursal));
+            if ((Original_Nombre_Sucursal == null)) {
+                throw new global::System.ArgumentNullException("Original_Nombre_Sucursal");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nombre_Sucursal));
+            }
+            if ((Original_Calle == null)) {
+                throw new global::System.ArgumentNullException("Original_Calle");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Calle));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(Original_Numero));
+            if ((Original_Colonia == null)) {
+                throw new global::System.ArgumentNullException("Original_Colonia");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Colonia));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -936,8 +1083,8 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Categoria, short Original_Id_Categoria, string Original_Categoria) {
-            return this.Update(Original_Id_Categoria, Categoria, Original_Id_Categoria, Original_Categoria);
+        public virtual int Update(string Nombre_Sucursal, string Calle, short Numero, string Colonia, short Original_Id_Sucursal, string Original_Nombre_Sucursal, string Original_Calle, short Original_Numero, string Original_Colonia) {
+            return this.Update(Original_Id_Sucursal, Nombre_Sucursal, Calle, Numero, Colonia, Original_Id_Sucursal, Original_Nombre_Sucursal, Original_Calle, Original_Numero, Original_Colonia);
         }
     }
     
@@ -953,7 +1100,7 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         
         private UpdateOrderOption _updateOrder;
         
-        private CategoriasTableAdapter _categoriasTableAdapter;
+        private SucursalesTableAdapter _sucursalesTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -975,12 +1122,12 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public CategoriasTableAdapter CategoriasTableAdapter {
+        public SucursalesTableAdapter SucursalesTableAdapter {
             get {
-                return this._categoriasTableAdapter;
+                return this._sucursalesTableAdapter;
             }
             set {
-                this._categoriasTableAdapter = value;
+                this._sucursalesTableAdapter = value;
             }
         }
         
@@ -1003,9 +1150,9 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._categoriasTableAdapter != null) 
-                            && (this._categoriasTableAdapter.Connection != null))) {
-                    return this._categoriasTableAdapter.Connection;
+                if (((this._sucursalesTableAdapter != null) 
+                            && (this._sucursalesTableAdapter.Connection != null))) {
+                    return this._sucursalesTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1020,7 +1167,7 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._categoriasTableAdapter != null)) {
+                if ((this._sucursalesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1034,12 +1181,12 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(TiendaTecDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._categoriasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Categorias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._sucursalesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Sucursales.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._categoriasTableAdapter.Update(updatedRows));
+                    result = (result + this._sucursalesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1053,11 +1200,11 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(TiendaTecDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._categoriasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Categorias.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._sucursalesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Sucursales.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._categoriasTableAdapter.Update(addedRows));
+                    result = (result + this._sucursalesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1071,11 +1218,11 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(TiendaTecDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._categoriasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Categorias.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sucursalesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Sucursales.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._categoriasTableAdapter.Update(deletedRows));
+                    result = (result + this._sucursalesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1118,8 +1265,8 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._categoriasTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._categoriasTableAdapter.Connection) == false))) {
+            if (((this._sucursalesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._sucursalesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1155,13 +1302,13 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._categoriasTableAdapter != null)) {
-                    revertConnections.Add(this._categoriasTableAdapter, this._categoriasTableAdapter.Connection);
-                    this._categoriasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._categoriasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._categoriasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._categoriasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._categoriasTableAdapter.Adapter);
+                if ((this._sucursalesTableAdapter != null)) {
+                    revertConnections.Add(this._sucursalesTableAdapter, this._sucursalesTableAdapter.Connection);
+                    this._sucursalesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._sucursalesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._sucursalesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._sucursalesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._sucursalesTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1222,9 +1369,9 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._categoriasTableAdapter != null)) {
-                    this._categoriasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._categoriasTableAdapter]));
-                    this._categoriasTableAdapter.Transaction = null;
+                if ((this._sucursalesTableAdapter != null)) {
+                    this._sucursalesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sucursalesTableAdapter]));
+                    this._sucursalesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

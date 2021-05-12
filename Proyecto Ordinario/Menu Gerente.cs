@@ -12,23 +12,26 @@ using System.Windows.Forms;
 
 namespace Proyecto_Ordinario
 {
-    public partial class Menu_Principal : Form
+    public partial class Menu_Gerente : Form
     {
+        //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        public Menu_Principal()
+        //Constructor
+        public Menu_Gerente()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 40);
             panelMenu.Controls.Add(leftBorderBtn);
-
+            //Form
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+        
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(132, 66, 232);
@@ -36,11 +39,13 @@ namespace Proyecto_Ordinario
             public static Color color3 = Color.FromArgb(63, 150, 49);
             public static Color color4 = Color.FromArgb(30, 133, 206);
         }
+        
         private void BotonActivo(object senderBtn, Color color)
         {
             if (senderBtn != null)
             {
                 DisableButton();
+                //Button
                 currentBtn = (IconButton)senderBtn;
                 currentBtn.BackColor = Color.FromArgb(255, 177, 74);
                 currentBtn.ForeColor = color;
@@ -48,12 +53,12 @@ namespace Proyecto_Ordinario
                 currentBtn.IconColor = color;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-
+                //Left border button
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-
+                //Current Child Form Icon
                 iconoActual.IconChar = currentBtn.IconChar;
                 iconoActual.IconColor = color;
             }
@@ -72,12 +77,13 @@ namespace Proyecto_Ordinario
         }
         private void OpenChildForm(Form childForm)
         {
+            //open only form
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
             }
             currentChildForm = childForm;
-
+            //End
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -95,6 +101,9 @@ namespace Proyecto_Ordinario
             iconoActual.IconColor = Color.White;
             lbTituloActual.Text = "Inicio";
         }
+        //Events
+        //Reset
+        //}
         private void btnLogo_Click(object sender, EventArgs e)
         {
             if (currentChildForm != null)
@@ -104,6 +113,7 @@ namespace Proyecto_Ordinario
             Reset();
         }
 
+        //Menu Button_Clicks
         private void btnClientes_Click(object sender, EventArgs e)
         {
             BotonActivo(sender, RGBColors.color1);
@@ -146,7 +156,7 @@ namespace Proyecto_Ordinario
             OpenChildForm(new Sucursales());
         }
 
-
+        //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -158,6 +168,7 @@ namespace Proyecto_Ordinario
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        //Close-Maximize-Minimize
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -175,6 +186,7 @@ namespace Proyecto_Ordinario
         {
             WindowState = FormWindowState.Minimized;
         }
+        //Remove transparent border in maximized state
         private void FormMainMenu_Resize(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Maximized)
