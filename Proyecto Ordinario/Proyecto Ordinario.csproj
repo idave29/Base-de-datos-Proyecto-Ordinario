@@ -137,20 +137,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TiendaTecDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TiendaTecDataSetCat.Designer.cs">
+    <Compile Include="TiendaTecDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TiendaTecDataSetCat.xsd</DependentUpon>
+      <DependentUpon>TiendaTecDataSet4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TiendaTecDataSetMarcas.Designer.cs">
+    <Compile Include="TiendaTecDataSet5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TiendaTecDataSetMarcas.xsd</DependentUpon>
+      <DependentUpon>TiendaTecDataSet5.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TiendaTecDataSetPuestos.Designer.cs">
+    <Compile Include="TiendaTecDataSet6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TiendaTecDataSetPuestos.xsd</DependentUpon>
+      <DependentUpon>TiendaTecDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TiendaTecDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TiendaTecDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TiendaTecDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TiendaTecDataSet8.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Categorias.resx">
       <DependentUpon>Categorias.cs</DependentUpon>
@@ -249,38 +259,60 @@
     <None Include="TiendaTecDataSet3.xss">
       <DependentUpon>TiendaTecDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="TiendaTecDataSetCat.xsc">
-      <DependentUpon>TiendaTecDataSetCat.xsd</DependentUpon>
+    <None Include="TiendaTecDataSet4.xsc">
+      <DependentUpon>TiendaTecDataSet4.xsd</DependentUpon>
     </None>
-    <None Include="TiendaTecDataSetCat.xsd">
+    <None Include="TiendaTecDataSet4.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TiendaTecDataSetCat.Designer.cs</LastGenOutput>
+      <LastGenOutput>TiendaTecDataSet4.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="TiendaTecDataSetCat.xss">
-      <DependentUpon>TiendaTecDataSetCat.xsd</DependentUpon>
+    <None Include="TiendaTecDataSet4.xss">
+      <DependentUpon>TiendaTecDataSet4.xsd</DependentUpon>
     </None>
-    <None Include="TiendaTecDataSetMarcas.xsc">
-      <DependentUpon>TiendaTecDataSetMarcas.xsd</DependentUpon>
+    <None Include="TiendaTecDataSet5.xsc">
+      <DependentUpon>TiendaTecDataSet5.xsd</DependentUpon>
     </None>
-    <None Include="TiendaTecDataSetMarcas.xsd">
+    <None Include="TiendaTecDataSet5.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TiendaTecDataSetMarcas.Designer.cs</LastGenOutput>
+      <LastGenOutput>TiendaTecDataSet5.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="TiendaTecDataSetMarcas.xss">
-      <DependentUpon>TiendaTecDataSetMarcas.xsd</DependentUpon>
+    <None Include="TiendaTecDataSet5.xss">
+      <DependentUpon>TiendaTecDataSet5.xsd</DependentUpon>
     </None>
-    <None Include="TiendaTecDataSetPuestos.xsc">
-      <DependentUpon>TiendaTecDataSetPuestos.xsd</DependentUpon>
+    <None Include="TiendaTecDataSet6.xsc">
+      <DependentUpon>TiendaTecDataSet6.xsd</DependentUpon>
     </None>
-    <None Include="TiendaTecDataSetPuestos.xsd">
+    <None Include="TiendaTecDataSet6.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TiendaTecDataSetPuestos.Designer.cs</LastGenOutput>
+      <LastGenOutput>TiendaTecDataSet6.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="TiendaTecDataSetPuestos.xss">
-      <DependentUpon>TiendaTecDataSetPuestos.xsd</DependentUpon>
+    <None Include="TiendaTecDataSet6.xss">
+      <DependentUpon>TiendaTecDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaTecDataSet7.xsc">
+      <DependentUpon>TiendaTecDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaTecDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TiendaTecDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TiendaTecDataSet7.xss">
+      <DependentUpon>TiendaTecDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaTecDataSet8.xsc">
+      <DependentUpon>TiendaTecDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaTecDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TiendaTecDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TiendaTecDataSet8.xss">
+      <DependentUpon>TiendaTecDataSet8.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

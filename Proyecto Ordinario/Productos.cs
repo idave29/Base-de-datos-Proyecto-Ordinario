@@ -15,9 +15,9 @@ namespace Proyecto_Ordinario
     {
         //Conexion a la base de datos
         SqlConnection conexion = new SqlConnection();
-        //string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
+        string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
         //string cadena = "Data Source=shamiko;Initial Catalog=TiendaTec;Integrated Security=True";
-        string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True"; 
+        //string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True"; 
         int id = 0;
 
         public Productos()
@@ -39,10 +39,10 @@ namespace Proyecto_Ordinario
 
         private void Productos_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSetCat.Categorias' Puede moverla o quitarla según sea necesario.
-            this.categoriasTableAdapter.Fill(this.tiendaTecDataSetCat.Categorias);
-            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSetMarcas.Marcas' Puede moverla o quitarla según sea necesario.
-            this.marcasTableAdapter.Fill(this.tiendaTecDataSetMarcas.Marcas);
+            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet8.Categorias' Puede moverla o quitarla según sea necesario.
+            this.categoriasTableAdapter.Fill(this.tiendaTecDataSet8.Categorias);
+            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet7.Marcas' Puede moverla o quitarla según sea necesario.
+            this.marcasTableAdapter.Fill(this.tiendaTecDataSet7.Marcas);
 
         }
 
@@ -51,19 +51,44 @@ namespace Proyecto_Ordinario
             conexion.Open();
             if (txtId.Text != "" && txtN.Text != "" && txtDesc.Text != "" && txtPrecio.Text != "")
             {
-                int marca = Convert.ToInt16(cmbMarca.SelectedIndex) + 1;
-                int categoria = Convert.ToInt16(cmbCateg.SelectedIndex) + 1;
-                int id = Convert.ToInt16(txtId.Text);
-                string cadena = "insert into Productos values (" + id + ",'" + txtN.Text + "','" + txtDesc.Text + "','" + txtPrecio.Text + "','" + marca + "','" + categoria + "')";
-                SqlCommand comando = new SqlCommand(cadena, conexion);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Los datos se guardaron correctamente");
-                Limpiar();
+                conexion.Close();
+                if (ExisteRegistro())
+                {
+                    conexion.Open();
+                    int marca = Convert.ToInt16(cmbMarca.SelectedIndex) + 1;
+                    int categoria = Convert.ToInt16(cmbCateg.SelectedIndex) + 1;
+                    int id = Convert.ToInt16(txtId.Text);
+                    string cadena = "insert into Productos values (" + id + ",'" + txtN.Text + "','" + txtDesc.Text + "','" + txtPrecio.Text + "','" + marca + "','" + categoria + "')";
+                    SqlCommand comando = new SqlCommand(cadena, conexion);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Los datos se guardaron correctamente");
+                    Limpiar();
+                }
             }
             else
                 MessageBox.Show("Lllenar los campos");
             conexion.Close();
 
+        }
+
+        private bool ExisteRegistro()
+        {
+            conexion.Open();
+            string cod = txtId.Text;
+            string cadena = "sp_IDProducto";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", cod);
+            SqlDataReader registro = comando.ExecuteReader();
+
+            if (registro.Read())
+            {
+                MessageBox.Show("Ya existe el ID");
+                return false;
+            }
+            else
+                conexion.Close();
+            return true;
         }
 
         private void Limpiar()

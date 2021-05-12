@@ -15,9 +15,9 @@ namespace Proyecto_Ordinario
     {
         //Conexion a la base de datos
         SqlConnection conexion = new SqlConnection();
-        //string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
+        string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
         //string cadena = "Data Source=shamiko;Initial Catalog=TiendaTec;Integrated Security=True";
-        string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True"; 
+        //string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True"; 
         int id = 0;
 
         public Marcas()
@@ -70,18 +70,43 @@ namespace Proyecto_Ordinario
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            if (txtId.Text != "" && txtMarca.Text != "" )
+            if (txtId.Text != "" && txtMarca.Text != "")
             {
-                int id = Convert.ToInt16(txtId.Text);
-                string cadena = "insert into Marcas values (" + id + ",'" + txtMarca.Text + "')";
-                SqlCommand comando = new SqlCommand(cadena, conexion);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Los datos se guardaron correctamente");
-                Limpiar();
+                conexion.Close();
+                if (ExisteRegistro())
+                {
+                    conexion.Open();
+                    int id = Convert.ToInt16(txtId.Text);
+                    string cadena = "insert into Marcas values (" + id + ",'" + txtMarca.Text + "')";
+                    SqlCommand comando = new SqlCommand(cadena, conexion);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Los datos se guardaron correctamente");
+                    Limpiar();
+                }
             }
             else
                 MessageBox.Show("Llenar los campos");
             conexion.Close();
+        }
+
+        private bool ExisteRegistro()
+        {
+            conexion.Open();
+            string cod = txtId.Text;
+            string cadena = "sp_Marcas";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", cod);
+            SqlDataReader registro = comando.ExecuteReader();
+
+            if (registro.Read())
+            {
+                MessageBox.Show("Ya existe el ID");
+                return false;
+            }
+            else
+                conexion.Close();
+            return true;
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)

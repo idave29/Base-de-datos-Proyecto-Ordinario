@@ -16,9 +16,9 @@ namespace Proyecto_Ordinario
     {
         //Conexion a la base de datos
         SqlConnection conexion = new SqlConnection();
-        //string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
+        string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
         //string cadena = "Data Source=shamiko;Initial Catalog=TiendaTec;Integrated Security=True";
-        string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True";
+        //string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True";
         int id = 0;
         double subTotal = 0.0;
         double costoProd = 0.0;
@@ -33,12 +33,12 @@ namespace Proyecto_Ordinario
 
         private void Compra_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet3.Empleados' Puede moverla o quitarla según sea necesario.
-            this.empleadosTableAdapter.Fill(this.tiendaTecDataSet3.Empleados);
-            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet2.Clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.tiendaTecDataSet2.Clientes);
-            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet1.Sucursales' Puede moverla o quitarla según sea necesario.
-            this.sucursalesTableAdapter.Fill(this.tiendaTecDataSet1.Sucursales);
+            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet5.Empleados' Puede moverla o quitarla según sea necesario.
+            this.empleadosTableAdapter.Fill(this.tiendaTecDataSet5.Empleados);
+            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet4.Clientes' Puede moverla o quitarla según sea necesario.
+            this.clientesTableAdapter.Fill(this.tiendaTecDataSet4.Clientes);
+            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet3.Sucursales' Puede moverla o quitarla según sea necesario.
+            this.sucursalesTableAdapter.Fill(this.tiendaTecDataSet3.Sucursales);
             // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet.Productos' Puede moverla o quitarla según sea necesario.
             this.productosTableAdapter.Fill(this.tiendaTecDataSet.Productos);
         }
@@ -82,11 +82,12 @@ namespace Proyecto_Ordinario
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            conexion.Open();
+            //conexion.Open();
             if (rdbProd.Checked == true)
             {
                 if (txtId.Text != "" && txtCantidad.Text != "" && cmbProd.Text != "")
                 {
+                    conexion.Open();
                     int id = Convert.ToInt16(txtId.Text);
 
                     //subTotal = 0.0;
@@ -113,16 +114,22 @@ namespace Proyecto_Ordinario
             {
                 if (txtId.Text != "" && txtIva.Text != "")
                 {
-                    double IVA = Convert.ToDouble(txtIva.Text);
-                    total = subTotal;
-                    total = total + ((IVA / 100) * subTotal);
-                    //lbTotalFinal.Text = total.ToString();
-                    string cadena1 = "insert into Ticket values (" + txtId.Text + ",'" + dateTimePicker1.Value.ToShortDateString() + "'," + (cmbSucursal.SelectedIndex + 1) + "," + total + "," + IVA + "," + (cmbCliente.SelectedIndex + 1) + "," + (cmbEmpleado.SelectedIndex + 1) + ")";
-                    SqlCommand comando1 = new SqlCommand(cadena1, conexion);
-                    comando1.ExecuteNonQuery();
-                    MessageBox.Show("Los datos del ticket se guardaron correctamente");
-                    lbTotalFinal.Text = "--";
-                    lbSubtotal.Text = "--";
+                    //////////////////////////////////////
+                    conexion.Close();
+                    if (ExisteRegistro())
+                    {
+                        conexion.Open();
+                        double IVA = Convert.ToDouble(txtIva.Text);
+                        total = subTotal;
+                        total = total + ((IVA / 100) * subTotal);
+                        //lbTotalFinal.Text = total.ToString();
+                        string cadena1 = "insert into Ticket values (" + txtId.Text + ",'" + dateTimePicker1.Value.ToShortDateString() + "'," + (cmbSucursal.SelectedIndex + 1) + "," + total + "," + IVA + "," + (cmbCliente.SelectedIndex + 1) + "," + (cmbEmpleado.SelectedIndex + 1) + ")";
+                        SqlCommand comando1 = new SqlCommand(cadena1, conexion);
+                        comando1.ExecuteNonQuery();
+                        MessageBox.Show("Los datos del ticket se guardaron correctamente");
+                        lbTotalFinal.Text = "--";
+                        lbSubtotal.Text = "--";
+                    }
                 }
                 else
                     MessageBox.Show("Llenar los campos");
@@ -130,7 +137,27 @@ namespace Proyecto_Ordinario
             Limpiar();
             conexion.Close();
         }
-        
+
+        private bool ExisteRegistro()
+        {
+            conexion.Open();
+            string cod = txtId.Text;
+            string cadena = "sp_Ticket";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", cod);
+            SqlDataReader registro = comando.ExecuteReader();
+
+            if (registro.Read())
+            {
+                MessageBox.Show("ya existe el Folio");
+                return false;
+            }
+            else
+                conexion.Close();
+            return true;
+        }
+
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             conexion.Open();
@@ -287,7 +314,7 @@ namespace Proyecto_Ordinario
                 int cliente = Convert.ToInt16(cmbCliente.SelectedIndex) + 1;
                 int empl = Convert.ToInt16(cmbEmpleado.SelectedIndex) + 1;
                 int id = Convert.ToInt16(txtId.Text);
-                string cadena = "UPDATE Ticket set Folio_Ticket='" + id + "',Fecha_Hora_Venta='" + dateTimePicker1.Value.ToShortDateString() + "',Id_Sucursal='" + surc + "',Total='" + lbTotalFinal.Text + "',IVA='" + txtIva.Text + "',Id_Cliente='" + cliente + "',Id_Empleado=" + empl;
+                string cadena = "UPDATE Ticket set Folio_Ticket='" + id + "',Fecha_Hora_Venta='" + dateTimePicker1.Value.ToShortDateString() + "',Id_Sucursal='" + surc + "',Total='" + lbTotalFinal.Text + "',IVA='" + txtIva.Text + "',Id_Cliente='" + cliente + "',Id_Empleado=" + empl + "WHERE Folio_Ticket=" + txtId.Text;
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 int cant;
                 cant = comando.ExecuteNonQuery();
@@ -387,7 +414,7 @@ namespace Proyecto_Ordinario
             conexion.Open();
             if (rdbProd.Checked == true)
             {
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM Productos_Ticket ORDER BY Folio_Ticket DESC", conexion);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM UltimoRegProdT()", conexion);
                 SqlDataAdapter adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = cmd;
                 DataTable tabla = new DataTable();
@@ -396,7 +423,7 @@ namespace Proyecto_Ordinario
             }
             if (rdbTicket.Checked == true)
             {
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM Ticket ORDER BY Folio_Ticket DESC", conexion);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM UltimoRegT()", conexion);
                 SqlDataAdapter adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = cmd;
                 DataTable tabla = new DataTable();
@@ -411,6 +438,8 @@ namespace Proyecto_Ordinario
             txtId.Clear();
             txtCantidad.Clear();
             txtIva.Clear();
+            lbTotalFinal.Text = "--";
+            lbSubtotal.Text = "--";
         }
 
         

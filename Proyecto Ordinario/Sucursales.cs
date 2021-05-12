@@ -15,9 +15,9 @@ namespace Proyecto_Ordinario
     {
         //Conexion a la base de datos
         SqlConnection conexion = new SqlConnection();
-        //string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
+        string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
         //string cadena = "Data Source=shamiko;Initial Catalog=TiendaTec;Integrated Security=True";
-        string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True";
+        //string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True";
         int id = 0;
 
         public Sucursales()
@@ -31,17 +31,42 @@ namespace Proyecto_Ordinario
             conexion.Open();
             if (txtId.Text != "" && txtN.Text != "" && txtCalle.Text != "" && txtColonia.Text != "" && txtNumero.Text != "")
             {
-                int id = Convert.ToInt16(txtId.Text);
-                int num = Convert.ToInt16(txtNumero.Text);
-                string cadena = "insert into Sucursales values (" + id + ",'" + txtN.Text + "','" + txtCalle.Text + "'," + num + ",'" + txtColonia.Text + "')";
-                SqlCommand comando = new SqlCommand(cadena, conexion);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Los datos se guardaron correctamente");
-                Limpiar();
+                conexion.Close();
+                if (ExisteRegistro())
+                {
+                    conexion.Open();
+                    int id = Convert.ToInt16(txtId.Text);
+                    int num = Convert.ToInt16(txtNumero.Text);
+                    string cadena = "insert into Sucursales values (" + id + ",'" + txtN.Text + "','" + txtCalle.Text + "'," + num + ",'" + txtColonia.Text + "')";
+                    SqlCommand comando = new SqlCommand(cadena, conexion);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Los datos se guardaron correctamente");
+                    Limpiar();
+                }
             }
             else
                 MessageBox.Show("Lllenar los campos");
             conexion.Close();
+        }
+
+        private bool ExisteRegistro()
+        {
+            conexion.Open();
+            string cod = txtId.Text;
+            string cadena = "sp_Prov";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", cod);
+            SqlDataReader registro = comando.ExecuteReader();
+
+            if (registro.Read())
+            {
+                MessageBox.Show("Ya existe el ID");
+                return false;
+            }
+            else
+                conexion.Close();
+            return true;
         }
 
         private void Limpiar()

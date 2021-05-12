@@ -20,17 +20,17 @@ namespace Proyecto_Ordinario {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("TiendaTecDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("TiendaTecDataSet8")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class TiendaTecDataSet : global::System.Data.DataSet {
+    public partial class TiendaTecDataSet8 : global::System.Data.DataSet {
         
-        private ProductosDataTable tableProductos;
+        private CategoriasDataTable tableCategorias;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public TiendaTecDataSet() {
+        public TiendaTecDataSet8() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Proyecto_Ordinario {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected TiendaTecDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected TiendaTecDataSet8(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Proyecto_Ordinario {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Productos"] != null)) {
-                    base.Tables.Add(new ProductosDataTable(ds.Tables["Productos"]));
+                if ((ds.Tables["Categorias"] != null)) {
+                    base.Tables.Add(new CategoriasDataTable(ds.Tables["Categorias"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Proyecto_Ordinario {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ProductosDataTable Productos {
+        public CategoriasDataTable Categorias {
             get {
-                return this.tableProductos;
+                return this.tableCategorias;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Proyecto_Ordinario {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            TiendaTecDataSet cln = ((TiendaTecDataSet)(base.Clone()));
+            TiendaTecDataSet8 cln = ((TiendaTecDataSet8)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Proyecto_Ordinario {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Productos"] != null)) {
-                    base.Tables.Add(new ProductosDataTable(ds.Tables["Productos"]));
+                if ((ds.Tables["Categorias"] != null)) {
+                    base.Tables.Add(new CategoriasDataTable(ds.Tables["Categorias"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Proyecto_Ordinario {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableProductos = ((ProductosDataTable)(base.Tables["Productos"]));
+            this.tableCategorias = ((CategoriasDataTable)(base.Tables["Categorias"]));
             if ((initTable == true)) {
-                if ((this.tableProductos != null)) {
-                    this.tableProductos.InitVars();
+                if ((this.tableCategorias != null)) {
+                    this.tableCategorias.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Proyecto_Ordinario {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "TiendaTecDataSet";
+            this.DataSetName = "TiendaTecDataSet8";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/TiendaTecDataSet.xsd";
+            this.Namespace = "http://tempuri.org/TiendaTecDataSet8.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableProductos = new ProductosDataTable();
-            base.Tables.Add(this.tableProductos);
+            this.tableCategorias = new CategoriasDataTable();
+            base.Tables.Add(this.tableCategorias);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeProductos() {
+        private bool ShouldSerializeCategorias() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Proyecto_Ordinario {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            TiendaTecDataSet ds = new TiendaTecDataSet();
+            TiendaTecDataSet8 ds = new TiendaTecDataSet8();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,31 +270,23 @@ namespace Proyecto_Ordinario {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ProductosRowChangeEventHandler(object sender, ProductosRowChangeEvent e);
+        public delegate void CategoriasRowChangeEventHandler(object sender, CategoriasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ProductosDataTable : global::System.Data.TypedTableBase<ProductosRow> {
-            
-            private global::System.Data.DataColumn columnId_Producto;
-            
-            private global::System.Data.DataColumn columnProducto;
-            
-            private global::System.Data.DataColumn columnDescripcion;
-            
-            private global::System.Data.DataColumn columnPrecio;
-            
-            private global::System.Data.DataColumn columnId_Marca;
+        public partial class CategoriasDataTable : global::System.Data.TypedTableBase<CategoriasRow> {
             
             private global::System.Data.DataColumn columnId_Categoria;
             
+            private global::System.Data.DataColumn columnCategoria;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductosDataTable() {
-                this.TableName = "Productos";
+            public CategoriasDataTable() {
+                this.TableName = "Categorias";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +294,7 @@ namespace Proyecto_Ordinario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ProductosDataTable(global::System.Data.DataTable table) {
+            internal CategoriasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,49 +311,9 @@ namespace Proyecto_Ordinario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ProductosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CategoriasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Id_ProductoColumn {
-                get {
-                    return this.columnId_Producto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ProductoColumn {
-                get {
-                    return this.columnProducto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DescripcionColumn {
-                get {
-                    return this.columnDescripcion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PrecioColumn {
-                get {
-                    return this.columnPrecio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Id_MarcaColumn {
-                get {
-                    return this.columnId_Marca;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -369,6 +321,14 @@ namespace Proyecto_Ordinario {
             public global::System.Data.DataColumn Id_CategoriaColumn {
                 get {
                     return this.columnId_Categoria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CategoriaColumn {
+                get {
+                    return this.columnCategoria;
                 }
             }
             
@@ -383,57 +343,53 @@ namespace Proyecto_Ordinario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductosRow this[int index] {
+            public CategoriasRow this[int index] {
                 get {
-                    return ((ProductosRow)(this.Rows[index]));
+                    return ((CategoriasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ProductosRowChangeEventHandler ProductosRowChanging;
+            public event CategoriasRowChangeEventHandler CategoriasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ProductosRowChangeEventHandler ProductosRowChanged;
+            public event CategoriasRowChangeEventHandler CategoriasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ProductosRowChangeEventHandler ProductosRowDeleting;
+            public event CategoriasRowChangeEventHandler CategoriasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ProductosRowChangeEventHandler ProductosRowDeleted;
+            public event CategoriasRowChangeEventHandler CategoriasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddProductosRow(ProductosRow row) {
+            public void AddCategoriasRow(CategoriasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductosRow AddProductosRow(short Id_Producto, string Producto, string Descripcion, decimal Precio, short Id_Marca, short Id_Categoria) {
-                ProductosRow rowProductosRow = ((ProductosRow)(this.NewRow()));
+            public CategoriasRow AddCategoriasRow(short Id_Categoria, string Categoria) {
+                CategoriasRow rowCategoriasRow = ((CategoriasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id_Producto,
-                        Producto,
-                        Descripcion,
-                        Precio,
-                        Id_Marca,
-                        Id_Categoria};
-                rowProductosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowProductosRow);
-                return rowProductosRow;
+                        Id_Categoria,
+                        Categoria};
+                rowCategoriasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCategoriasRow);
+                return rowCategoriasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductosRow FindById_Producto(short Id_Producto) {
-                return ((ProductosRow)(this.Rows.Find(new object[] {
-                            Id_Producto})));
+            public CategoriasRow FindById_Categoria(short Id_Categoria) {
+                return ((CategoriasRow)(this.Rows.Find(new object[] {
+                            Id_Categoria})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ProductosDataTable cln = ((ProductosDataTable)(base.Clone()));
+                CategoriasDataTable cln = ((CategoriasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -441,72 +397,55 @@ namespace Proyecto_Ordinario {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ProductosDataTable();
+                return new CategoriasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnId_Producto = base.Columns["Id_Producto"];
-                this.columnProducto = base.Columns["Producto"];
-                this.columnDescripcion = base.Columns["Descripcion"];
-                this.columnPrecio = base.Columns["Precio"];
-                this.columnId_Marca = base.Columns["Id_Marca"];
                 this.columnId_Categoria = base.Columns["Id_Categoria"];
+                this.columnCategoria = base.Columns["Categoria"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnId_Producto = new global::System.Data.DataColumn("Id_Producto", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Producto);
-                this.columnProducto = new global::System.Data.DataColumn("Producto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProducto);
-                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescripcion);
-                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecio);
-                this.columnId_Marca = new global::System.Data.DataColumn("Id_Marca", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Marca);
                 this.columnId_Categoria = new global::System.Data.DataColumn("Id_Categoria", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_Categoria);
+                this.columnCategoria = new global::System.Data.DataColumn("Categoria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoria);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId_Producto}, true));
-                this.columnId_Producto.AllowDBNull = false;
-                this.columnId_Producto.Unique = true;
-                this.columnProducto.AllowDBNull = false;
-                this.columnProducto.MaxLength = 50;
-                this.columnDescripcion.AllowDBNull = false;
-                this.columnDescripcion.MaxLength = 50;
-                this.columnPrecio.AllowDBNull = false;
-                this.columnId_Marca.AllowDBNull = false;
+                                this.columnId_Categoria}, true));
                 this.columnId_Categoria.AllowDBNull = false;
+                this.columnId_Categoria.Unique = true;
+                this.columnCategoria.AllowDBNull = false;
+                this.columnCategoria.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductosRow NewProductosRow() {
-                return ((ProductosRow)(this.NewRow()));
+            public CategoriasRow NewCategoriasRow() {
+                return ((CategoriasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ProductosRow(builder);
+                return new CategoriasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ProductosRow);
+                return typeof(CategoriasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ProductosRowChanged != null)) {
-                    this.ProductosRowChanged(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
+                if ((this.CategoriasRowChanged != null)) {
+                    this.CategoriasRowChanged(this, new CategoriasRowChangeEvent(((CategoriasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -514,8 +453,8 @@ namespace Proyecto_Ordinario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ProductosRowChanging != null)) {
-                    this.ProductosRowChanging(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
+                if ((this.CategoriasRowChanging != null)) {
+                    this.CategoriasRowChanging(this, new CategoriasRowChangeEvent(((CategoriasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -523,8 +462,8 @@ namespace Proyecto_Ordinario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ProductosRowDeleted != null)) {
-                    this.ProductosRowDeleted(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
+                if ((this.CategoriasRowDeleted != null)) {
+                    this.CategoriasRowDeleted(this, new CategoriasRowChangeEvent(((CategoriasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -532,14 +471,14 @@ namespace Proyecto_Ordinario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ProductosRowDeleting != null)) {
-                    this.ProductosRowDeleting(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
+                if ((this.CategoriasRowDeleting != null)) {
+                    this.CategoriasRowDeleting(this, new CategoriasRowChangeEvent(((CategoriasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveProductosRow(ProductosRow row) {
+            public void RemoveCategoriasRow(CategoriasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -548,7 +487,7 @@ namespace Proyecto_Ordinario {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TiendaTecDataSet ds = new TiendaTecDataSet();
+                TiendaTecDataSet8 ds = new TiendaTecDataSet8();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -566,7 +505,7 @@ namespace Proyecto_Ordinario {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ProductosDataTable";
+                attribute2.FixedValue = "CategoriasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -610,80 +549,36 @@ namespace Proyecto_Ordinario {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ProductosRow : global::System.Data.DataRow {
+        public partial class CategoriasRow : global::System.Data.DataRow {
             
-            private ProductosDataTable tableProductos;
+            private CategoriasDataTable tableCategorias;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ProductosRow(global::System.Data.DataRowBuilder rb) : 
+            internal CategoriasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableProductos = ((ProductosDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short Id_Producto {
-                get {
-                    return ((short)(this[this.tableProductos.Id_ProductoColumn]));
-                }
-                set {
-                    this[this.tableProductos.Id_ProductoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Producto {
-                get {
-                    return ((string)(this[this.tableProductos.ProductoColumn]));
-                }
-                set {
-                    this[this.tableProductos.ProductoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Descripcion {
-                get {
-                    return ((string)(this[this.tableProductos.DescripcionColumn]));
-                }
-                set {
-                    this[this.tableProductos.DescripcionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Precio {
-                get {
-                    return ((decimal)(this[this.tableProductos.PrecioColumn]));
-                }
-                set {
-                    this[this.tableProductos.PrecioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short Id_Marca {
-                get {
-                    return ((short)(this[this.tableProductos.Id_MarcaColumn]));
-                }
-                set {
-                    this[this.tableProductos.Id_MarcaColumn] = value;
-                }
+                this.tableCategorias = ((CategoriasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public short Id_Categoria {
                 get {
-                    return ((short)(this[this.tableProductos.Id_CategoriaColumn]));
+                    return ((short)(this[this.tableCategorias.Id_CategoriaColumn]));
                 }
                 set {
-                    this[this.tableProductos.Id_CategoriaColumn] = value;
+                    this[this.tableCategorias.Id_CategoriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Categoria {
+                get {
+                    return ((string)(this[this.tableCategorias.CategoriaColumn]));
+                }
+                set {
+                    this[this.tableCategorias.CategoriaColumn] = value;
                 }
             }
         }
@@ -692,22 +587,22 @@ namespace Proyecto_Ordinario {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ProductosRowChangeEvent : global::System.EventArgs {
+        public class CategoriasRowChangeEvent : global::System.EventArgs {
             
-            private ProductosRow eventRow;
+            private CategoriasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductosRowChangeEvent(ProductosRow row, global::System.Data.DataRowAction action) {
+            public CategoriasRowChangeEvent(CategoriasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductosRow Row {
+            public CategoriasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -723,7 +618,7 @@ namespace Proyecto_Ordinario {
         }
     }
 }
-namespace Proyecto_Ordinario.TiendaTecDataSetTableAdapters {
+namespace Proyecto_Ordinario.TiendaTecDataSet8TableAdapters {
     
     
     /// <summary>
@@ -735,7 +630,7 @@ namespace Proyecto_Ordinario.TiendaTecDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ProductosTableAdapter : global::System.ComponentModel.Component {
+    public partial class CategoriasTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -749,7 +644,7 @@ namespace Proyecto_Ordinario.TiendaTecDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ProductosTableAdapter() {
+        public CategoriasTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -846,52 +741,34 @@ namespace Proyecto_Ordinario.TiendaTecDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Productos";
-            tableMapping.ColumnMappings.Add("Id_Producto", "Id_Producto");
-            tableMapping.ColumnMappings.Add("Producto", "Producto");
-            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
-            tableMapping.ColumnMappings.Add("Precio", "Precio");
-            tableMapping.ColumnMappings.Add("Id_Marca", "Id_Marca");
+            tableMapping.DataSetTable = "Categorias";
             tableMapping.ColumnMappings.Add("Id_Categoria", "Id_Categoria");
+            tableMapping.ColumnMappings.Add("Categoria", "Categoria");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Productos] WHERE (([Id_Producto] = @Original_Id_Producto) AND ([Producto] = @Original_Producto) AND ([Descripcion] = @Original_Descripcion) AND ([Precio] = @Original_Precio) AND ([Id_Marca] = @Original_Id_Marca) AND ([Id_Categoria] = @Original_Id_Categoria))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Categorias] WHERE (([Id_Categoria] = @Original_Id_Categoria) A" +
+                "ND ([Categoria] = @Original_Categoria))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Producto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Producto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Producto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Producto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "Precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Marca", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Categoria", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Categoria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Categoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Productos] ([Id_Producto], [Producto], [Descripcion], [Precio], [Id_Marca], [Id_Categoria]) VALUES (@Id_Producto, @Producto, @Descripcion, @Precio, @Id_Marca, @Id_Categoria);
-SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM Productos WHERE (Id_Producto = @Id_Producto)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Categorias] ([Id_Categoria], [Categoria]) VALUES (@Id_Categori" +
+                "a, @Categoria);\r\nSELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Catego" +
+                "ria = @Id_Categoria)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Producto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Producto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Producto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Producto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Marca", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Categoria", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Categoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Productos] SET [Id_Producto] = @Id_Producto, [Producto] = @Producto, [Descripcion] = @Descripcion, [Precio] = @Precio, [Id_Marca] = @Id_Marca, [Id_Categoria] = @Id_Categoria WHERE (([Id_Producto] = @Original_Id_Producto) AND ([Producto] = @Original_Producto) AND ([Descripcion] = @Original_Descripcion) AND ([Precio] = @Original_Precio) AND ([Id_Marca] = @Original_Id_Marca) AND ([Id_Categoria] = @Original_Id_Categoria));
-SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM Productos WHERE (Id_Producto = @Id_Producto)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Categorias] SET [Id_Categoria] = @Id_Categoria, [Categoria] = @Categoria WHERE (([Id_Categoria] = @Original_Id_Categoria) AND ([Categoria] = @Original_Categoria));
+SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categoria)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Producto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Producto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Producto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Producto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Marca", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Categoria", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Producto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Producto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Producto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Producto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "Precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Marca", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Categoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Categoria", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Categoria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Categoria", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -907,8 +784,7 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM db" +
-                "o.Productos";
+            this._commandCollection[0].CommandText = "SELECT Id_Categoria, Categoria FROM dbo.Categorias";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -916,7 +792,7 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TiendaTecDataSet.ProductosDataTable dataTable) {
+        public virtual int Fill(TiendaTecDataSet8.CategoriasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -929,9 +805,9 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TiendaTecDataSet.ProductosDataTable GetData() {
+        public virtual TiendaTecDataSet8.CategoriasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TiendaTecDataSet.ProductosDataTable dataTable = new TiendaTecDataSet.ProductosDataTable();
+            TiendaTecDataSet8.CategoriasDataTable dataTable = new TiendaTecDataSet8.CategoriasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -939,15 +815,15 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TiendaTecDataSet.ProductosDataTable dataTable) {
+        public virtual int Update(TiendaTecDataSet8.CategoriasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TiendaTecDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Productos");
+        public virtual int Update(TiendaTecDataSet8 dataSet) {
+            return this.Adapter.Update(dataSet, "Categorias");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -969,23 +845,14 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_Id_Producto, string Original_Producto, string Original_Descripcion, decimal Original_Precio, short Original_Id_Marca, short Original_Id_Categoria) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_Id_Producto));
-            if ((Original_Producto == null)) {
-                throw new global::System.ArgumentNullException("Original_Producto");
+        public virtual int Delete(short Original_Id_Categoria, string Original_Categoria) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_Id_Categoria));
+            if ((Original_Categoria == null)) {
+                throw new global::System.ArgumentNullException("Original_Categoria");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Producto));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Categoria));
             }
-            if ((Original_Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_Descripcion");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Descripcion));
-            }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_Precio));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_Id_Marca));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((short)(Original_Id_Categoria));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1006,23 +873,14 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short Id_Producto, string Producto, string Descripcion, decimal Precio, short Id_Marca, short Id_Categoria) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(Id_Producto));
-            if ((Producto == null)) {
-                throw new global::System.ArgumentNullException("Producto");
+        public virtual int Insert(short Id_Categoria, string Categoria) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(Id_Categoria));
+            if ((Categoria == null)) {
+                throw new global::System.ArgumentNullException("Categoria");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Producto));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Categoria));
             }
-            if ((Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Descripcion");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Descripcion));
-            }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(Precio));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(Id_Marca));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((short)(Id_Categoria));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1043,39 +901,21 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short Id_Producto, string Producto, string Descripcion, decimal Precio, short Id_Marca, short Id_Categoria, short Original_Id_Producto, string Original_Producto, string Original_Descripcion, decimal Original_Precio, short Original_Id_Marca, short Original_Id_Categoria) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(Id_Producto));
-            if ((Producto == null)) {
-                throw new global::System.ArgumentNullException("Producto");
+        public virtual int Update(short Id_Categoria, string Categoria, short Original_Id_Categoria, string Original_Categoria) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(Id_Categoria));
+            if ((Categoria == null)) {
+                throw new global::System.ArgumentNullException("Categoria");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Producto));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Categoria));
             }
-            if ((Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Descripcion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Descripcion));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Precio));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(Id_Marca));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Id_Categoria));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_Id_Producto));
-            if ((Original_Producto == null)) {
-                throw new global::System.ArgumentNullException("Original_Producto");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(Original_Id_Categoria));
+            if ((Original_Categoria == null)) {
+                throw new global::System.ArgumentNullException("Original_Categoria");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Producto));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Categoria));
             }
-            if ((Original_Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_Descripcion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Descripcion));
-            }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_Precio));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((short)(Original_Id_Marca));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((short)(Original_Id_Categoria));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1096,8 +936,8 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Producto, string Descripcion, decimal Precio, short Id_Marca, short Id_Categoria, short Original_Id_Producto, string Original_Producto, string Original_Descripcion, decimal Original_Precio, short Original_Id_Marca, short Original_Id_Categoria) {
-            return this.Update(Original_Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria, Original_Id_Producto, Original_Producto, Original_Descripcion, Original_Precio, Original_Id_Marca, Original_Id_Categoria);
+        public virtual int Update(string Categoria, short Original_Id_Categoria, string Original_Categoria) {
+            return this.Update(Original_Id_Categoria, Categoria, Original_Id_Categoria, Original_Categoria);
         }
     }
     
@@ -1113,7 +953,7 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         
         private UpdateOrderOption _updateOrder;
         
-        private ProductosTableAdapter _productosTableAdapter;
+        private CategoriasTableAdapter _categoriasTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1135,12 +975,12 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ProductosTableAdapter ProductosTableAdapter {
+        public CategoriasTableAdapter CategoriasTableAdapter {
             get {
-                return this._productosTableAdapter;
+                return this._categoriasTableAdapter;
             }
             set {
-                this._productosTableAdapter = value;
+                this._categoriasTableAdapter = value;
             }
         }
         
@@ -1163,9 +1003,9 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._productosTableAdapter != null) 
-                            && (this._productosTableAdapter.Connection != null))) {
-                    return this._productosTableAdapter.Connection;
+                if (((this._categoriasTableAdapter != null) 
+                            && (this._categoriasTableAdapter.Connection != null))) {
+                    return this._categoriasTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1180,7 +1020,7 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._productosTableAdapter != null)) {
+                if ((this._categoriasTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1192,14 +1032,14 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(TiendaTecDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(TiendaTecDataSet8 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._productosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Productos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._categoriasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Categorias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._productosTableAdapter.Update(updatedRows));
+                    result = (result + this._categoriasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1211,13 +1051,13 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(TiendaTecDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(TiendaTecDataSet8 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._productosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Productos.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._categoriasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Categorias.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._productosTableAdapter.Update(addedRows));
+                    result = (result + this._categoriasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1229,13 +1069,13 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(TiendaTecDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(TiendaTecDataSet8 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._productosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Productos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._categoriasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Categorias.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._productosTableAdapter.Update(deletedRows));
+                    result = (result + this._categoriasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1271,15 +1111,15 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(TiendaTecDataSet dataSet) {
+        public virtual int UpdateAll(TiendaTecDataSet8 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._productosTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._productosTableAdapter.Connection) == false))) {
+            if (((this._categoriasTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._categoriasTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1315,13 +1155,13 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._productosTableAdapter != null)) {
-                    revertConnections.Add(this._productosTableAdapter, this._productosTableAdapter.Connection);
-                    this._productosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._productosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._productosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._productosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._productosTableAdapter.Adapter);
+                if ((this._categoriasTableAdapter != null)) {
+                    revertConnections.Add(this._categoriasTableAdapter, this._categoriasTableAdapter.Connection);
+                    this._categoriasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._categoriasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._categoriasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._categoriasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._categoriasTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1382,9 +1222,9 @@ SELECT Id_Producto, Producto, Descripcion, Precio, Id_Marca, Id_Categoria FROM P
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._productosTableAdapter != null)) {
-                    this._productosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._productosTableAdapter]));
-                    this._productosTableAdapter.Transaction = null;
+                if ((this._categoriasTableAdapter != null)) {
+                    this._categoriasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._categoriasTableAdapter]));
+                    this._categoriasTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

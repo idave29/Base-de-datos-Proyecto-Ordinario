@@ -15,9 +15,9 @@ namespace Proyecto_Ordinario
     {
         //Conexion a la base de datos
         SqlConnection conexion = new SqlConnection();
-        //string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
+        string cadena = "Data Source=PC-DAVID;Initial Catalog=TiendaTec;Integrated Security=True";
         //string cadena = "Data Source=shamiko;Initial Catalog=TiendaTec;Integrated Security=True";
-        string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True";
+        //string cadena = "Data Source=DESKTOP-445GP77;Initial Catalog=TiendaTec;Integrated Security=True";
         int id = 0;
 
         public Empleados()
@@ -39,9 +39,8 @@ namespace Proyecto_Ordinario
 
         private void Empleados_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSetPuestos.Puestos' Puede moverla o quitarla según sea necesario.
-            this.puestosTableAdapter.Fill(this.tiendaTecDataSetPuestos.Puestos);
-            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet2.Puestos' Puede moverla o quitarla según sea necesario.
+            // TODO: esta línea de código carga datos en la tabla 'tiendaTecDataSet6.Puestos' Puede moverla o quitarla según sea necesario.
+            this.puestosTableAdapter.Fill(this.tiendaTecDataSet6.Puestos);
 
         }
 
@@ -50,18 +49,43 @@ namespace Proyecto_Ordinario
             conexion.Open();
             if (txtId.Text != "" && txtN.Text != "" && txtAP.Text != "" && txtAM.Text != "" && txtC.Text != "" && txtContra.Text != "" && txtSueldo.Text != "")
             {
-                int puesto = Convert.ToInt16(cmbPuesto.SelectedIndex) + 1;
-                int id = Convert.ToInt16(txtId.Text);
-                string cadena = "insert into Empleados values (" + id + ",'" + txtN.Text + "','" + txtAP.Text + "','" + txtAM.Text + "','" + txtC.Text + "','" + txtSueldo.Text + "','" + puesto + "','" + dateTimePicker1.Value.Date.ToString("MM-dd-yyyy") + "','" + txtContra.Text + "')";
-                SqlCommand comando = new SqlCommand(cadena, conexion);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Los datos se guardaron correctamente");
-                Limpiar();
+                conexion.Close();
+                if (ExisteRegistro())
+                {
+                    conexion.Open();
+                    int puesto = Convert.ToInt16(cmbPuesto.SelectedIndex) + 1;
+                    int id = Convert.ToInt16(txtId.Text);
+                    string cadena = "insert into Empleados values (" + id + ",'" + txtN.Text + "','" + txtAP.Text + "','" + txtAM.Text + "','" + txtC.Text + "','" + txtSueldo.Text + "','" + puesto + "','" + dateTimePicker1.Value.Date.ToString("MM-dd-yyyy") + "','" + txtContra.Text + "')";
+                    SqlCommand comando = new SqlCommand(cadena, conexion);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Los datos se guardaron correctamente");
+                    Limpiar();
+                }
             }
             else
                 MessageBox.Show("Lllenar los campos");
             conexion.Close();
 
+        }
+
+        private bool ExisteRegistro()
+        {
+            conexion.Open();
+            string cod = txtId.Text;
+            string cadena = "sp_NombreEmpleado";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", cod);
+            SqlDataReader registro = comando.ExecuteReader();
+
+            if (registro.Read())
+            {
+                MessageBox.Show("Ya existe el ID");
+                return false;
+            }
+            else
+                conexion.Close();
+            return true;
         }
 
         private void Limpiar()
@@ -147,7 +171,7 @@ namespace Proyecto_Ordinario
             {
                 int puesto = Convert.ToInt16(cmbPuesto.SelectedIndex) + 1;
                 int id = Convert.ToInt16(txtId.Text);
-                string cadena = "UPDATE Empleados set Id_Empleado='" + id + "',Nombre='" + txtN.Text + "',Ap_Pat='" + txtAP.Text + "',Ap_Mat='" + txtAM.Text + "',Correo='" + txtC.Text + "',Sueldo='" + txtSueldo.Text + "',Id_Puesto='" + puesto + "',Fecha_Nacimiento='" + dateTimePicker1.Value.ToShortDateString() + "',Contrasenia='" + txtContra.Text + "' WHERE Id_Empleado=" + id;
+                string cadena = "UPDATE Empleados set Id_Empleado='" + id + "',Nombre='" + txtN.Text + "',Ap_Pat='" + txtAP.Text + "',Ap_Mat='" + txtAM.Text + "',Correo='" + txtC.Text + "',Sueldo='" + txtSueldo.Text + "',Id_Puesto='" + puesto + "',Fecha_Nacimiento='" + dateTimePicker1.Value.Date.ToString("MM-dd-yyyy") + "',Contrasenia='" + txtContra.Text + "' WHERE Id_Empleado=" + id;
                 //string cadena = "UPDATE Productos set Id_Producto='" + id + "',Producto='" + txtN.Text + "',Descripcion='" + txtDesc.Text + "',Precio='" + txtPrecio.Text + "',Marca='" + marca + "',Categoria='" + categoria + "' WHERE Id_Producto=" + txtId.Text;
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 int cant;

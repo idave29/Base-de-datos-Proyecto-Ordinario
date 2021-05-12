@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="TiendaTecDataSetCat" targetNamespace="http://tempuri.org/TiendaTecDataSetCat.xsd" xmlns:mstns="http://tempuri.org/TiendaTecDataSetCat.xsd" xmlns="http://tempuri.org/TiendaTecDataSetCat.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="TiendaTecDataSet8" targetNamespace="http://tempuri.org/TiendaTecDataSet8.xsd" xmlns:mstns="http://tempuri.org/TiendaTecDataSet8.xsd" xmlns="http://tempuri.org/TiendaTecDataSet8.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TiendaTecConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TiendaTecConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Proyecto_Ordinario.Properties.Settings.GlobalReference.Default.TiendaTecConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TiendaTecConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TiendaTecConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Proyecto_Ordinario.Properties.Settings.GlobalReference.Default.TiendaTecConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CategoriasTableAdapter" GeneratorDataComponentClassName="CategoriasTableAdapter" Name="Categorias" UserDataComponentName="CategoriasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TiendaTecConnectionString1 (Settings)" DbObjectName="TiendaTec.dbo.Categorias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TiendaTecConnectionString (Settings)" DbObjectName="TiendaTec.dbo.Categorias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Categorias] WHERE (([Id_Categoria] = @Original_Id_Categoria) AND ([Categoria] = @Original_Categoria))</CommandText>
@@ -60,7 +60,7 @@ SELECT Id_Categoria, Categoria FROM Categorias WHERE (Id_Categoria = @Id_Categor
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="TiendaTecDataSetCat" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TiendaTecDataSetCat" msprop:Generator_UserDSName="TiendaTecDataSetCat">
+  <xs:element name="TiendaTecDataSet8" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TiendaTecDataSet8" msprop:Generator_UserDSName="TiendaTecDataSet8">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Categorias" msprop:Generator_TableClassName="CategoriasDataTable" msprop:Generator_TableVarName="tableCategorias" msprop:Generator_TablePropName="Categorias" msprop:Generator_RowDeletingName="CategoriasRowDeleting" msprop:Generator_RowChangingName="CategoriasRowChanging" msprop:Generator_RowEvHandlerName="CategoriasRowChangeEventHandler" msprop:Generator_RowDeletedName="CategoriasRowDeleted" msprop:Generator_UserTableName="Categorias" msprop:Generator_RowChangedName="CategoriasRowChanged" msprop:Generator_RowEvArgName="CategoriasRowChangeEvent" msprop:Generator_RowClassName="CategoriasRow">
